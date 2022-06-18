@@ -1,0 +1,46 @@
+﻿@model MVCWebApp.Models.Doctor.PatientTemprature
+@{
+    ViewData["Title"] = "Doctor";
+
+}
+<html>
+<head>
+    <style type="text/css">
+     
+        .message {
+            background-color: wheat;
+            color:orangered;
+        }
+    </style>
+</head>
+<body>
+   
+
+
+    @if (ViewBag.Message != null)
+    {
+         <p><h3 class="message">@ViewBag.Message</h3></p> 
+    }
+   
+    <h1>Welcome to check if you have fever or not</h1>
+    @using (Html.BeginForm("FeverCheck", "Doctor", FormMethod.Post))
+    {
+
+        <table class="table">
+            <tr>
+                <td> Temperature : </td>
+                <td>
+
+                    @Html.TextBoxFor(m => m.patientTemp, new { title = "FeverCheck" })
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+
+                <td><input onclick="location.href='@Url.Action("FeverCheck","Doctor")'" type="submit" value="submit" /></td>
+            </tr>
+        </table>
+
+    }
+</body>
+</html>

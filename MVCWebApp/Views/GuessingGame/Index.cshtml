@@ -1,0 +1,73 @@
+﻿@model MVCWebApp.Models.GuessingProperties
+@{
+    ViewData["Title"] = "Doctor";
+
+}
+<html>
+<head>
+    <style type="text/css">
+
+        .message {
+            background-color: wheat;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    @if (ViewBag.Message != null)
+    {
+        <p><h3 class="message">@ViewBag.Message</h3></p>
+    }
+
+    
+    @using (Html.BeginForm("Index", "GuessingGame", FormMethod.Post))
+    {
+
+        <table class="table">
+            <tr>
+                <td> Enter  Your guess  : </td>
+                <td>
+
+                    @Html.TextBoxFor(m => m.EnteredNum, new { title = "Index" })
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+
+                <td><input onclick="location.href='@Url.Action("Index","GuessingGame")'" type="submit" value="submit" /></td>
+            </tr>
+        </table>
+
+    }
+</body>
+</html>
+
+
+@*<html>
+    <head>
+        <style type="text/css">
+
+            .message {
+                background-color: wheat;
+                color: orangered;
+            }
+        </style>
+    </head>
+
+    <body>
+        @if (ViewBag.Message != null)
+        {
+            <p><h3 class="message">@ViewBag.Message</h3></p>
+        }
+
+        <form asp-controller="GuessingGame" asp-action="Index" method="post">
+            <label>Your guess please:</label>
+            <input type="number" name="guess" min="1" val />
+            <input type="submit" value="Guess!" />
+        </form>
+    </body>
+    </html>*@
+

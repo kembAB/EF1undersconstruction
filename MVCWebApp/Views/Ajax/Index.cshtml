@@ -1,0 +1,19 @@
+﻿@{ ViewData["Title"] = "Ajax Person Index"; }
+<h1>Ajax Person Index</h1>
+
+<div class="ajax-buttons">
+
+    <button onclick="getPeople()" class="btn btn-primary">People</button>
+
+    <button onclick="getPerson(id)" class="btn btn-primary">Details</button>
+
+    <button onclick="deletePerson(id)" class="btn btn-danger">Delete</button>
+
+</div>
+
+<div class="form-group">
+    <label for="txtId">ID:</label>
+    <input type="number" id="txtId" name="txtId"><br><br>
+</div>
+
+<div id="personContainer"></div>

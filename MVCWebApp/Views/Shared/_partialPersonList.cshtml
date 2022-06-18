@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVCWebApp.Models.Person.personproperties>
+
+<div class=" personlist container">
+
+    <div class="row align-items-start">
+
+        @*<div class="col">
+            <h4>Name</h4>
+        </div>
+
+        <div class="col">
+            <h4>City</h4>
+        </div>
+
+        <div class="col">
+            <h4>Phone Number</h4>
+        </div>
+
+        <div class="col">
+            <h4>ID</h4>
+        </div>*@
+
+    </div>
+
+    @foreach (MVCWebApp.Models.Person.personproperties item in Model)
+    {
+        <partial name="_partialPersonAjax" model="item" />
+    }
+
+</div>

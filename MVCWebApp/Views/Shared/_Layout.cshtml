@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <img src="@Url.Content("~/Content/pagelogopic.jpg")" alt="website logo" />
+        <ul class="navigation">
+            <li class="linavigation">
+                @Html.ActionLink("Home", "Index", "Home")
+            </li>
+            <li class="linavigation">
+                @Html.ActionLink("About", "About", "Home")
+            </li>
+            <li class="linavigation">
+                @Html.ActionLink("Contact", "Contact", "Home")
+            </li>
+            <li class="linavigation">
+                @Html.ActionLink("Projects", "Projects", "Home")
+            </li>
+            <li class="linavigation">
+                @Html.ActionLink("Person", "Index", "Person")
+            </li>
+            <li class="linavigation">
+                @Html.ActionLink("Ajax", "Index", "Ajax")
+            </li>
+
+        </ul>
+
+    </header>
+
+
+    <ul id="TempratureRandom" class="navigationb">
+        <li class="linavigationb">
+            @Html.ActionLink("check your Temprature", "FeverCheck", "Doctor")
+        </li>
+        <li Id="hideit" class="linavigationb">
+            @Html.ActionLink("Guess new  Random Number", "Index", "GuessingGame", new { @id = "editLink", @class = "button" })
+
+
+        </li>
+
+    </ul>
+
+  
+    <div class="container b">
+        @RenderBody()
+    </div>
+    <footer><p>@DateTime.Now.ToString("dddd, dd MMMM yyyy") - &copy;ABEL HAILE , GÖTEBORG ,2022</p></footer>
+</body>
+</html>

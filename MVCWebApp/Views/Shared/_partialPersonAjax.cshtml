@@ -1,0 +1,21 @@
+﻿@model MVCWebApp.Models.Person.personproperties
+
+<div class="row align-items-start">
+
+    <div class="col">
+        <p>@Model.Name</p>
+    </div>
+
+    <div class="col">
+        <p>@Model.City</p>
+    </div>
+
+    <div class="col">
+        <p>@Model.PhoneNumber</p>
+    </div>
+
+    <div class="col">
+        <a asp-action="Delete" asp-route-id="@Model.ID" class="btn btn-danger">Delete</a>
+    </div>
+
+</div>
